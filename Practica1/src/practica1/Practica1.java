@@ -8,6 +8,7 @@ package practica1;
 /**
  *
  * @author Rafita
+ * @author yo
  */
 public class Practica1 {
 
