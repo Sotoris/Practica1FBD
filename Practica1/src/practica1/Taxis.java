@@ -67,6 +67,6 @@ public class Taxis {
 
     @Override
     public String toString() {
-        return "Taxis{" + "id=" + id + ", modelo=" + modelo + ", marca=" + marca + ", a\u00f1o=" + año + ", numPuertas=" + numPuertas + ", llanta=" + llanta + '}';
+        return "Taxis{" + "id=" + id + ", modelo=" + modelo + ", marca=" + marca + ", año=" + año + ", numPuertas=" + numPuertas + ", llanta=" + llanta + '}';
     }
 }
