@@ -64,4 +64,9 @@ public class Taxis {
     public void setLlanta(boolean llanta) {
         this.llanta = llanta;
     }
+
+    @Override
+    public String toString() {
+        return "Taxis{" + "id=" + id + ", modelo=" + modelo + ", marca=" + marca + ", a\u00f1o=" + año + ", numPuertas=" + numPuertas + ", llanta=" + llanta + '}';
+    }
 }
