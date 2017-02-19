@@ -57,7 +57,7 @@ public class ArchivoTaxi extends ManipulaArchivo {
                 String modelo = linea[2];
 		int año = Integer.parseInt(linea[3]);
 		int numPuertas = Integer.parseInt(linea[4]);
-                String llanta = linea[5];
+                char llanta = linea[5].charAt(0);
                 int idDueño = Integer.parseInt(linea[6]);
 		return new Taxis(id, marca, modelo, año, numPuertas, llanta, idDueño);
 	}
