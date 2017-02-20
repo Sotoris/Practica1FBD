@@ -5,6 +5,9 @@
  */
 package practica1;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 
 /**
  *
@@ -12,14 +15,49 @@ package practica1;
  */
 public class Chofer extends Persona{
     
+    protected int idTaxi;
+    
     public Chofer(String nombre, String domicilio, int numLicencia, String fechaIngreso, 
-            String email, int numCelular){
+            String email, int numCelular, int idTaxi){
         super(nombre, domicilio, numLicencia, fechaIngreso, email, numCelular);
-        
+        this.idTaxi = idTaxi;
     }
     
     public Chofer(){
         super();
+    }
+    
+    private void pideDatos() {
+		input = new Scanner(System.in);
+		boolean bandera = true;
+		System.out.println("Ingresa nombre.");
+		this.nombre = input.next();
+		do {
+			try {
+				System.out.println("Ingresa domicilio.");
+				this.domicilio = input.next();
+                                System.out.println("Ingresa numero de licencia");
+                                this.numLicencia = input.nextInt();
+                                System.out.println("Ingresa fecha de ingreso con formato dd/mm/aaaa.");
+                                this.fechaIngreso = input.next();
+                                System.out.println("Ingresa email.");
+                                this.email = input.next();
+                                System.out.println("Ingresa numero celular.");
+                                this.numCelular = input.nextInt();
+                                System.out.println("Ingresa ID del taxi");
+                                this.idTaxi = input.nextInt();
+				bandera = false;
+			} catch (InputMismatchException e) {
+				input.next();
+				bandera = false;
+			}
+		} while (bandera);
+	}
+
+    
+    @Override
+    public void edita(){
+        pideDatos();
     }
     
     @Override
@@ -81,16 +119,25 @@ public class Chofer extends Persona{
         public void setNumCelular(int numCelular){
             this.numCelular = numCelular;
         }
-
-	@Override
+        
+        public int getIdTaxi(){
+            return idTaxi;
+        }
+        
+        public void setIdTaxi(int idTaxi){
+            this.idTaxi = idTaxi;
+        }
+        
+        @Override
 	public String toString() {
 		return this.nombre + "," + this.domicilio + "," + this.numLicencia
-                        + "," + this.fechaIngreso + "," + this.email + "," + this.numCelular;
+                        + "," + this.fechaIngreso + "," + this.email + "," + this.numCelular
+                        + "," + this.idTaxi;
 	}
 
 	public static void main(String[] args) {
-		Persona m = new Persona();
-		System.out.println(m);
+		Chofer c = new Chofer();
+		System.out.println(c);
 	}
 
 }

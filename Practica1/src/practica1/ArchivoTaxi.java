@@ -34,7 +34,7 @@ public class ArchivoTaxi extends ManipulaArchivo {
 	 * @return arreglo de Taxis con los datos del archivo
 	 * @throws ArchivoLecturaNoCreadoException
 	 */
-	public Taxis[] leeMedicos() throws ArchivoLecturaNoCreadoException {
+	public Taxis[] leeTaxis() throws ArchivoLecturaNoCreadoException {
 		String lineas[] = super.leeArchivo();
 		Taxis taxis[] = new Taxis[lineas.length];
 		for (int i = 0; i < taxis.length; i++) {

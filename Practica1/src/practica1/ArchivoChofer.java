@@ -43,7 +43,8 @@ public class ArchivoChofer extends ManipulaArchivo{
                 String fechaIngreso = linea[3];
                 String email = linea[4];
                 int numCelular = Integer.parseInt(linea[5]);
-		return new Chofer(nombre, domicilio, numLicencia, fechaIngreso,email,numCelular);
+                int idTaxi = Integer.parseInt(linea[6]);
+		return new Chofer(nombre, domicilio, numLicencia, fechaIngreso,email,numCelular, idTaxi);
 	}
 
     

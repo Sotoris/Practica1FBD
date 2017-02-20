@@ -5,9 +5,6 @@
  */
 package practica1;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 /**
  *
  * @author Rafita
@@ -38,7 +35,7 @@ public class Practica1 {
         ArchivoTaxi archivoTaxi = new ArchivoTaxi();
         try {
             System.out.println("Leyendo datos....");
-            taxis = archivoTaxi.leeMedicos();
+            taxis = archivoTaxi.leeTaxis();
             System.out.println("Datos leidos....");
         } catch (ArchivoLecturaNoCreadoException e) {
             System.out.println(e.getMessage());
