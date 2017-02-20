@@ -41,11 +41,9 @@ public class Main {
                         }
                         break;
                     case 2:
-//                        String nombreArchivo = "";
-//                        ManipulaArchivo man = new ManipulaArchivo(nombreArchivo);
-//                        practica1.verTaxis(man.leeArchivo());
-                        System.out.println("error");
-                        System.exit(0);
+                        String nombreArchivo = "Taxis.txt";
+                        ManipulaArchivo man = new ManipulaArchivo(nombreArchivo);
+                        practica1.verTaxis(man.leeArchivo());
                         break;
                     case 3:
                         System.out.println("Elije el número del médico que deseas editar");

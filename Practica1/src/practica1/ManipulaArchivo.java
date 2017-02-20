@@ -112,7 +112,7 @@ public class ManipulaArchivo {
             throw new ArchivoLecturaNoCreadoException("No hay datos que se puedan leer");
         }
         //convertimos el String a arreglo de Strings. Escapamos el carácter |
-        String lines[] = lineas.split("\\|");
+        String lines[] = lineas.split("|");
         return lines;
     }
 
