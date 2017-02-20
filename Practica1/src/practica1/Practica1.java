@@ -168,4 +168,10 @@ public class Practica1 {
     public void setTaxis(Taxis[] taxis) {
         this.taxis = taxis;
     }
+    
+    public void verTaxis(String[] arr){
+        for(int i = 0 ; i< arr.length; i++){
+            System.out.println(arr[i]);
+        }
+    }
 }

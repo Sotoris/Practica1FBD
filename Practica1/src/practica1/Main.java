@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ArchivoLecturaNoCreadoException {
         boolean bandera;
         int opcion = 0;
         Scanner input = new Scanner(System.in);
@@ -41,7 +41,11 @@ public class Main {
                         }
                         break;
                     case 2:
-                        System.out.println(practica1.toStringTaxis());
+//                        String nombreArchivo = "";
+//                        ManipulaArchivo man = new ManipulaArchivo(nombreArchivo);
+//                        practica1.verTaxis(man.leeArchivo());
+                        System.out.println("error");
+                        System.exit(0);
                         break;
                     case 3:
                         System.out.println("Elije el número del médico que deseas editar");
