@@ -1,4 +1,4 @@
-1,Ferrari,Ferrari,2016,2,S,1
+null
 null
 null
 null

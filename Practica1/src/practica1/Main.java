@@ -16,9 +16,9 @@ import java.util.logging.Logger;
  */
 public class Main {
 
-    public static void main(String[] args) throws ArchivoLecturaNoCreadoException {
-        
-         boolean bandera;
+    public static void main(String[] args) throws ArchivoLecturaNoCreadoException, ExcesoTaxiException {
+
+        boolean bandera;
         int opcion = 0;
         Scanner input = new Scanner(System.in);
         Practica1 practica1 = new Practica1();
@@ -53,11 +53,11 @@ public class Main {
                         break;
                 }
             }
-        } while (bandera);    
+        } while (bandera);
     }
-    
-    public static void menuTaxi(){
-         boolean bandera;
+
+    public static void menuTaxi() {
+        boolean bandera;
         int opcion = 0;
         Scanner input = new Scanner(System.in);
         Practica1 practica1 = new Practica1();
@@ -83,15 +83,7 @@ public class Main {
                         }
                         break;
                     case 2:
-                        String nombreArchivo = "";
-                        ManipulaArchivo man = new ManipulaArchivo(nombreArchivo);
-                {
-                    try {
-                        practica1.verTaxis(man.leeArchivo());
-                    } catch (ArchivoLecturaNoCreadoException ex) {
-                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
+                        practica1.verTaxis();
                         break;
                     case 3:
                         System.out.println("Elije el número del taxi que deseas editar");
@@ -116,7 +108,6 @@ public class Main {
 
                         break;
                     case 4:
-
                         System.out.println("Elije el número del taxi que deseas borrar");
                         bandera = true;
                         do {
@@ -147,10 +138,10 @@ public class Main {
                         break;
                 }
             }
-        } while (bandera);    
+        } while (bandera);
     }
-    
-    public static void menuChofer(){
+
+    public static void menuChofer() {
         boolean bandera;
         int opcion = 0;
         Scanner input = new Scanner(System.in);
@@ -177,11 +168,7 @@ public class Main {
                         }
                         break;
                     case 2:
-//                        String nombreArchivo = "";
-//                        ManipulaArchivo man = new ManipulaArchivo(nombreArchivo);
-//                        practica1.verTaxis(man.leeArchivo());
-                        System.out.println("Error");
-                        System.exit(0);
+                        chofer.verChoferes();
                         break;
                     case 3:
                         System.out.println("Elije el número del chofer que deseas editar");
@@ -237,11 +224,11 @@ public class Main {
                         break;
                 }
             }
-        } while (bandera);    
+        } while (bandera);
     }
-    
-     public static void menuDueño(){
-         boolean bandera;
+
+    public static void menuDueño() throws ExcesoTaxiException {
+        boolean bandera;
         int opcion = 0;
         Scanner input = new Scanner(System.in);
         MetodosDueño metodosdueño = new MetodosDueño();
@@ -267,11 +254,7 @@ public class Main {
                         }
                         break;
                     case 2:
-//                        String nombreArchivo = "";
-//                        ManipulaArchivo man = new ManipulaArchivo(nombreArchivo);
-//                        practica1.verTaxis(man.leeArchivo());
-                        System.out.println("error");
-                        System.exit(0);
+                        metodosdueño.verDueños();
                         break;
                     case 3:
                         System.out.println("Elije el número del dueño que deseas editar");
@@ -327,6 +310,6 @@ public class Main {
                         break;
                 }
             }
-        } while (bandera);    
+        } while (bandera);
     }
 }

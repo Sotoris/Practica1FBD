@@ -10,19 +10,19 @@ package practica1;
  * @author Miguel
  */
 public class MetodosDueño {
-    
-  /**
+
+    /**
      * @param args the command line arguments
      */
     private Dueño dueños[];
 
     /**
-     * 
+     *
      *
      * @param cantidadDueños
      */
     public MetodosDueño(int cantidadDueños) {
-        dueños  = new Dueño[cantidadDueños];
+        dueños = new Dueño[cantidadDueños];
     }
 
     /**
@@ -70,7 +70,7 @@ public class MetodosDueño {
      *
      * @return
      */
-    private int obtenerCantidadDueños(){
+    private int obtenerCantidadDueños() {
         int cantidad = 0;
         for (Dueño m : dueños) {
             if (m != null) {
@@ -140,9 +140,19 @@ public class MetodosDueño {
      * @param i indice del dueño a eliminar
      * @throws ExcesoDueñoException
      */
-    public void eliminaDueño(int i) throws ExcesoDueñoException {
+    public void eliminaDueño(int i) throws ExcesoDueñoException, ExcesoTaxiException {
         if (i < 0 || i >= this.obtenerCantidadDueños()) {
             throw new ExcesoDueñoException("Dueño seleccionado incorrectamente");
+        }
+        Practica1 practica1 = new Practica1();
+        Taxis taxis[] = practica1.getTaxis();
+        Dueño due = this.dueños[i];
+        int k = 0;
+        for (Taxis taxi : taxis) {
+            if (taxi.getId() == due.getidTaxi()) {
+                practica1.eliminaTaxi(k);
+            }
+            k++;
         }
         this.dueños[i] = null;
         this.recorreDueños(i);
@@ -164,10 +174,30 @@ public class MetodosDueño {
     public void setDueños(Dueño[] dueños) {
         this.dueños = dueños;
     }
-    
-    public void verDueños(String[] arr){
-        for(int i = 0 ; i< arr.length; i++){
+
+    public void verDueños(String[] arr) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
+        }
+    }
+
+    /*
+    *imprime los dueños
+     */
+    public void verDueños() {
+        int i = 0;
+        for (Dueño dueños : this.dueños) {
+            if (dueños != null) {
+                System.out.println(i + "  Nombre: " + dueños.getNombre()
+                        + "  Num.Licencia: " + dueños.getNumLicencia()
+                        + "  Domicilio: " + dueños.getDomicilio() + "  RFC: " + dueños.getRFC()
+                        + "  Email: " + dueños.getEmail() + "  Celular " + dueños.getNumCelular()
+                        + "  IdTaxi: " + dueños.getidTaxi() + "\n");
+                i++;
+            }
+        }
+        if (i == 0) {
+            System.out.println("No hay dueños registrados");
         }
     }
 }

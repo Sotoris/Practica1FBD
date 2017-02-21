@@ -28,7 +28,7 @@ public class MetodosChoferes {
      * Leeemos la información que hay guardada en los archivos y la cargamos
      */
     public MetodosChoferes() {
-        choferes= new Chofer[5];
+        choferes = new Chofer[5];
         setChoferes(new Chofer[5 * 5]);
         ArchivoChofer archivoChofer = new ArchivoChofer();
         try {
@@ -163,12 +163,31 @@ public class MetodosChoferes {
     public void setChoferes(Chofer[] choferes) {
         this.choferes = choferes;
     }
-    
-    public void verChoferes(String[] arr){
-        for(int i = 0 ; i< arr.length; i++){
+
+    public void verChoferes(String[] arr) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
         }
     }
 
-    
+    /*
+    *imprime a los choferes
+    */
+    public void verChoferes() {
+        int i = 0;
+        for (Chofer chofer : this.choferes) {
+            if (chofer != null) {
+                System.out.println(i + "  Nombre: " + chofer.getNombre() + "  Numero Licencia: "
+                        + chofer.numLicencia + "  Ingreso: " + chofer.fechaIngreso + "  Email: "
+                        + chofer.getEmail() + "  Celular: " + chofer.getNumCelular() + "  IdTaxi: "
+                        + chofer.getIdTaxi() + "\n");
+                i++;
+            }
+        }
+        if (i == 0) {
+            System.out.println("No hay choferesr registrados");
+        }
+
+    }
+
 }
