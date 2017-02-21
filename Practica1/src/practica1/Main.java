@@ -7,6 +7,8 @@ package practica1;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -81,9 +83,15 @@ public class Main {
                         }
                         break;
                     case 2:
-                        String nombreArchivo = "Taxis.txt";
+                        String nombreArchivo = "";
                         ManipulaArchivo man = new ManipulaArchivo(nombreArchivo);
+                {
+                    try {
                         practica1.verTaxis(man.leeArchivo());
+                    } catch (ArchivoLecturaNoCreadoException ex) {
+                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
                         break;
                     case 3:
                         System.out.println("Elije el número del taxi que deseas editar");
