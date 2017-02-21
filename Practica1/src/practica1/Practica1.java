@@ -5,9 +5,6 @@
  */
 package practica1;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 /**
  *
  * @author Rafita
@@ -21,7 +18,7 @@ public class Practica1 {
     private Taxis taxis[];
 
     /**
-     * Creacinco5 paciente por cada medico
+     * 
      *
      * @param cantidadTaxis
      */
@@ -38,7 +35,7 @@ public class Practica1 {
         ArchivoTaxi archivoTaxi = new ArchivoTaxi();
         try {
             System.out.println("Leyendo datos....");
-            taxis = archivoTaxi.leeMedicos();
+            taxis = archivoTaxi.leeTaxis();
             System.out.println("Datos leidos....");
         } catch (ArchivoLecturaNoCreadoException e) {
             System.out.println(e.getMessage());
@@ -133,7 +130,7 @@ public class Practica1 {
 
     public Taxis getTaxis(int i) throws ExcesoTaxiException {
         if (i < 0 || i >= this.obtenerCantidadTaxis()) {
-            throw new ExcesoTaxiException("Medico seleccionado incorrectamente");
+            throw new ExcesoTaxiException("Taxi seleccionado incorrectamente");
         }
         return this.taxis[i];
     }
@@ -146,7 +143,7 @@ public class Practica1 {
      */
     public void eliminaTaxi(int i) throws ExcesoTaxiException {
         if (i < 0 || i >= this.obtenerCantidadTaxis()) {
-            throw new ExcesoTaxiException("Medico seleccionado incorrectamente");
+            throw new ExcesoTaxiException("Taxi seleccionado incorrectamente");
         }
         this.taxis[i] = null;
         this.recorreTaxis(i);

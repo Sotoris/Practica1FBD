@@ -64,6 +64,9 @@ public class Persona {
 	}
 
 
+        public void edita(){
+            pideDatos();
+        }
 	public String getNombre() {
 		return nombre;
 	}
