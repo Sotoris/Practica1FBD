@@ -39,16 +39,6 @@ public class Main {
                         menuChofer();
                         break;
                     case 3:
-                        /**
-                        try {
-                            Taxis taxi = new Taxis();
-                            practica1.agregaTaxis(taxi);
-                            System.out.println("Taxis guardado correctamente.");
-                        } catch (ExcesoTaxiException e) {
-                            System.out.println("Ya no hay lugar disponible para un nuevo taxi.");
-                        }
-                        break;
-                        **/
                         menuDueño();
                     case 4:
                         System.out.println("Guardando datos....");
