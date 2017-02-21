@@ -108,7 +108,7 @@ public class MetodosDueño {
      * @return
      * @throws ExcesoTaxiException
      */
-    public String listadoDueños() throws ExcesoTaxiException {
+    public String listadoDueños() throws ExcesoDueñoException {
         String DueñosString = "";
         int i = 0;
         for (Dueño dueños : this.dueños) {
@@ -118,7 +118,7 @@ public class MetodosDueño {
             }
         }
         if (DueñosString.equals("")) {
-            throw new ExcesoTaxiException("No existen Dueños registrados");
+            throw new ExcesoDueñoException("No existen Dueños registrados");
         }
         return DueñosString;
     }
