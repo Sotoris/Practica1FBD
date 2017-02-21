@@ -25,7 +25,7 @@ public class Main {
         do {
             bandera = true;
             System.out.println("Ingresa la opción deseada\n" + "1-Taxis\n" + "2-Choferes\n"
-                    + "3-Dueños\n" + "4-Salir\n");
+                    + "3-Duenios\n" + "4-Salir\n");
             try {
                 opcion = input.nextInt();
             } catch (InputMismatchException e) {
@@ -41,7 +41,7 @@ public class Main {
                         menuChofer();
                         break;
                     case 3:
-                        menuDueño();
+                        menuDuenio();
                     case 4:
                         System.out.println("Guardando datos....");
                         practica1.guardarTaxis();
@@ -227,15 +227,15 @@ public class Main {
         } while (bandera);
     }
 
-    public static void menuDueño() throws ExcesoTaxiException {
+    public static void menuDuenio() throws ExcesoTaxiException {
         boolean bandera;
         int opcion = 0;
         Scanner input = new Scanner(System.in);
-        MetodosDueño metodosdueño = new MetodosDueño();
+        MetodosDuenio metodosduenio = new MetodosDuenio();
         do {
             bandera = true;
-            System.out.println("Ingresa la opción deseada\n" + "1-Agregar Dueño\n" + "2-Ver Dueño\n"
-                    + "3-Editar Dueño\n" + "4-Borrar Dueño\n" + "5-Salir\n");
+            System.out.println("Ingresa la opción deseada\n" + "1-Agregar Duenio\n" + "2-Ver Duenio\n"
+                    + "3-Editar Duenio\n" + "4-Borrar Duenio\n" + "5-Salir\n");
             try {
                 opcion = input.nextInt();
             } catch (InputMismatchException e) {
@@ -246,27 +246,27 @@ public class Main {
                 switch (opcion) {
                     case 1:
                         try {
-                            Dueño dueño = new Dueño();
-                            metodosdueño.agregaDueños(dueño);
-                            System.out.println("Dueño guardado correctamente.");
-                        } catch (ExcesoDueñoException e) {
-                            System.out.println("Ya no hay lugar disponible para un nuevo dueño.");
+                            Duenio duenio = new Duenio();
+                            metodosduenio.agregaDuenios(duenio);
+                            System.out.println("Duenio guardado correctamente.");
+                        } catch (ExcesoDuenioException e) {
+                            System.out.println("Ya no hay lugar disponible para un nuevo duenio.");
                         }
                         break;
                     case 2:
-                        metodosdueño.verDueños();
+                        metodosduenio.verDuenios();
                         break;
                     case 3:
-                        System.out.println("Elije el número del dueño que deseas editar");
+                        System.out.println("Elije el número del duenio que deseas editar");
                         bandera = true;
                         do {
                             try {
-                                System.out.println(metodosdueño.listadoDueños());
+                                System.out.println(metodosduenio.listadoDuenios());
                                 opcion = input.nextInt();
-                                metodosdueño.getDueños(opcion).edita();
+                                metodosduenio.getDuenios(opcion).edita();
                                 bandera = false;
-                                System.out.println("Dueño editado correctamente");
-                            } catch (ExcesoDueñoException e) {
+                                System.out.println("Duenio editado correctamente");
+                            } catch (ExcesoDuenioException e) {
                                 System.out.println(e.getMessage());
                                 bandera = false;
                             } catch (InputMismatchException i) {
@@ -280,15 +280,15 @@ public class Main {
                         break;
                     case 4:
 
-                        System.out.println("Elije el número del dueño que deseas borrar");
+                        System.out.println("Elije el número del duenio que deseas borrar");
                         bandera = true;
                         do {
                             try {
-                                System.out.println(metodosdueño.listadoDueños());
+                                System.out.println(metodosduenio.listadoDuenios());
                                 opcion = input.nextInt();
-                                metodosdueño.eliminaDueño(opcion);
+                                metodosduenio.eliminaDuenio(opcion);
                                 bandera = false;
-                            } catch (ExcesoDueñoException e) {
+                            } catch (ExcesoDuenioException e) {
                                 System.out.println(e.getMessage());
                                 bandera = false;
                             } catch (InputMismatchException i) {
@@ -300,8 +300,8 @@ public class Main {
                         bandera = true;
                         break;
                     case 5:
-                        System.out.println("Guardando datos de dueños....");
-                        metodosdueño.guardarDueños();
+                        System.out.println("Guardando datos de duenios....");
+                        metodosduenio.guardarDuenios();
                         bandera = false;
                         System.out.println("Datos guardados");
                         System.out.println("Saliendo del sistema...\nHasta pronto.");

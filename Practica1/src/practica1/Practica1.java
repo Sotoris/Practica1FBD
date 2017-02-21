@@ -51,7 +51,7 @@ public class Practica1 {
      */
     public void agregaTaxis(Taxis taxi) throws ExcesoTaxiException {
         if (!lugarTaxisDisponible()) {
-            throw new ExcesoTaxiException("Ya no hay espacios disponible para agregar un médico");
+            throw new ExcesoTaxiException("Ya no hay espacios disponible para agregar un taxi");
         } else {
             taxis[obtenerCantidadTaxis()] = taxi;
         }
@@ -119,7 +119,7 @@ public class Practica1 {
             }
         }
         if (taxisString.equals("")) {
-            throw new ExcesoTaxiException("No existen médicos registrados");
+            throw new ExcesoTaxiException("No existen taxis registrados");
         }
         return taxisString;
     }

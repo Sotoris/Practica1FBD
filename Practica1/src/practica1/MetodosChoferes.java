@@ -16,7 +16,7 @@ public class MetodosChoferes {
     protected Chofer choferes[];
 
     /**
-     * Creacinco5 paciente por cada medico
+     *
      *
      * @param cantidadChoferes
      */
@@ -65,7 +65,7 @@ public class MetodosChoferes {
     }
 
     /**
-     * ]Calcula los lugares ocupados por taxis
+     * Calcula los lugares ocupados por taxis
      *
      * @return
      */
@@ -128,7 +128,7 @@ public class MetodosChoferes {
 
     public Chofer getChoferes(int i) throws ExcesoTaxiException {
         if (i < 0 || i >= this.obtenerCantidadChoferes()) {
-            throw new ExcesoTaxiException("Medico seleccionado incorrectamente");
+            throw new ExcesoTaxiException("Chofer seleccionado incorrectamente");
         }
         return this.choferes[i];
     }
@@ -141,7 +141,7 @@ public class MetodosChoferes {
      */
     public void eliminaChofer(int i) throws ExcesoTaxiException {
         if (i < 0 || i >= this.obtenerCantidadChoferes()) {
-            throw new ExcesoTaxiException("Chofere seleccionado incorrectamente");
+            throw new ExcesoTaxiException("Chofer seleccionado incorrectamente");
         }
         this.choferes[i] = null;
         this.recorreChoferes(i);

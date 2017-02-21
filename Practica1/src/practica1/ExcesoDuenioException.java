@@ -9,9 +9,9 @@ package practica1;
  *
  * @author Miguel
  */
-public class ExcesoDueñoException  extends Exception{
+public class ExcesoDuenioException  extends Exception{
 	
-	public ExcesoDueñoException(String message){
+	public ExcesoDuenioException(String message){
 		super(message);
 	}
 

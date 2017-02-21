@@ -9,20 +9,20 @@ package practica1;
  *
  * @author Miguel
  */
-public class Dueño extends Persona  {
+public class Duenio extends Persona  {
     
     protected int idTaxi;
     protected String RFC;
     protected int idDueño;
     
-    public Dueño (String nombre, String domicilio, int numLicencia, String fechaIngreso, String email, int numCelular, int idTaxi, String RFC, int idDueño){
+    public Duenio (String nombre, String domicilio, int numLicencia, String fechaIngreso, String email, int numCelular, int idTaxi, String RFC, int idDueño){
             super (nombre,domicilio,numLicencia,fechaIngreso,email,numCelular);
             this.idTaxi = idTaxi;
             this.RFC = RFC;
             this.idDueño = idDueño;
     }
     
-    public Dueño(){
+    public Duenio(){
         super();
     }
 
