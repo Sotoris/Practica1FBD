@@ -38,7 +38,7 @@ public class ArchivoDueño extends ManipulaArchivo {
 		Dueño dueños[] = new Dueño[lineas.length];
 		for (int i = 0; i < dueños.length; i++) {
 			if (!lineas[i].equals("null")) {
-				dueños[i] = this.escribeDueño(lineas[i]);
+				dueños[i] = this.parseaDueño(lineas[i]);
 			}
 		}
 		return dueños;
@@ -49,7 +49,7 @@ public class ArchivoDueño extends ManipulaArchivo {
      * @param cadenaDueño la cadena a parsear
      * @return el objeto dueño con los datos de la cadena
     */
-    private Dueño escribeDueño(String cadenaDueño){
+    private Dueño parseaDueño(String cadenaDueño){
         String linea[] = cadenaDueño.trim().split(",");
         String nombre = linea[0];
         String domicilio = linea[1];
